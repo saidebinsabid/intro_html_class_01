@@ -1,0 +1,18 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff;
+  padding: 20px;
+}
+
+.title {
+  color: darkblue;
+  text-align: center;
+}
+
+.bio {
+  font-size: 18px;
+  color: #333;
+  background-color: lightyellow;
+  border: 1px solid orange;
+  padding: 10px;
+}
