@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Width & Height Examples</title>
+  <style>
+    /* Example 1: Width & Height */
+    .box {
+      width: 300px;
+      height: 200px;
+      background: lightblue;
+      text-align: center;
+      line-height: 200px;
+      margin-bottom: 30px;
+    }
+
+    /* Example 2: Max-Width */
+    .max-box {
+      border: 2px solid black;
+      max-width: 600px;
+      background: lightgreen;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    /* Example 3: Min-Height */
+    .min-box {
+      border: 2px solid tomato;
+      min-height: 150px;
+      background: #fdd;
+      padding: 10px;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h1>CSS Width / Height / Max / Min Example</h1>
+
+  <!-- Example 1 -->
+  <h2>1. Width & Height</h2>
+  <div class="box">300px x 200px</div>
+
+  <!-- Example 2 -->
+  <h2>2. Max-Width</h2>
+  <div class="max-box">
+    Resize your browser window.  
+    This box will never grow more than <b>600px</b>.
+  </div>
+
+  <!-- Example 3 -->
+  <h2>3. Min-Height</h2>
+  <div class="min-box">
+    This box has very little content,  
+    but height is still <b>at least 150px</b>.
+  </div>
+
+  <div class="min-box">
+    This box has long content, so it grows bigger automatically.<br><br>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.  
+    Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.  
+    Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.
+  </div>
+</body>
+</html>

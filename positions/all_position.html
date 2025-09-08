@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Relative */
+
+        /* Element normal position এ থাকে, কিন্তু আমরা চাইলে top/left/right/bottom দিয়ে shift করতে পারি। */
+
+        .relative-box {
+            position: relative;
+            left: 50px;
+            top: 20px;
+            background: lightblue;
+            width: 150px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        /* absolute */
+
+
+        /* Element তার nearest positioned parent (যেটার position relative, absolute বা fixed) এর ভিতরে অবস্থান করে। */
+
+        .container {
+            position: relative;
+            /* parent positioned */
+            width: 300px;
+            height: 200px;
+            border: 2px solid black;
+            margin: 20px;
+        }
+
+        .absolute-box {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: tomato;
+            color: white;
+            padding: 10px;
+        }
+
+
+
+        /* fixed design */
+
+        /* 👉 Element সবসময় screen এ fixed থাকে, scroll করলেও নড়ে না। */
+
+        .fixed-box {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: green;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+
+        /* Sticky style */
+        /* 👉 Sticky element তার normal flow এ থাকে, কিন্তু যখন scroll হয় তখন set করা top/right/bottom/left value অনুযায়ী fixed হয়ে যায়। */
+
+        .header {
+            position: sticky;
+            top: 0;
+            /* যখন scroll হবে তখন এই height এ এসে stop হবে */
+            background: orange;
+            color: white;
+            padding: 15px;
+            font-size: 20px;
+        }
+
+        .content {
+            height: 1500px;
+            /* scroll করার জন্য */
+            background: linear-gradient(white, lightblue);
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Position: Relative Example</h2>
+    <div class="relative-box">Relative Box</div>
+    <p>Other content after box...</p>
+
+
+
+    <!-- Absolute -->
+
+    <h2>Position: Absolute Example</h2>
+    <div class="container">
+        Container
+        <div class="absolute-box">Absolute Box</div>
+    </div>
+
+
+    <!-- Fixed -->
+    <h2>Position: Fixed Example</h2>
+    <p>Scroll down to see the fixed box stay in the same place.</p>
+    <p style="margin-top:1000px;">Scroll content...</p>
+    <div class="fixed-box">Fixed Box</div>
+
+    <!-- sticky -->
+    <h2>Position: Sticky Example</h2>
+    <div class="header">I am a Sticky Header</div>
+    <div class="content">
+        <p>Scroll down and you will see the header stays at the top when you scroll.</p>
+    </div>
+
+
+
+<!-- Relative → নিজ জায়গায় থাকে, কিন্তু shift হয়।
+
+Absolute → parent container এর ভেতর fixed হয়।
+
+Fixed → সবসময় screen এ স্থায়ীভাবে থাকে।
+
+Sticky → normal ভাবে থাকে, কিন্তু scroll করলে screen এ stick হয় (mix of relative + fixed)। -->
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Step-by-Step Background Demo</title>
+  <style>
+
+    .box {
+      /* width: 300px;
+      height: 200px; */
+      /* border: 2px solid black; */
+      margin-bottom: 30px;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      line-height: 200px;
+      background-image: url("../images/ba.png"); 
+    }
+
+    /* Step 2: no-repeat */
+    .no-repeat {
+      background-repeat: no-repeat;
+    }
+
+    /* Step 3: cover */
+    .cover {
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    /* Step 3: contain */
+    .contain {
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    /* Step 4: center */
+    .center {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Step-by-Step Background Demo</h1>
+
+  <h2>Step 1: Simple Background Image</h2>
+  <div class="box">Image Added</div>
+  <p>Initially image added, default behavior repeat হতে পারে।</p>
+
+  <h2>Step 2: Handle Repetition</h2>
+  <div class="box no-repeat">No Repeat</div>
+  <p>Image একবার show হবে, আর repeat হবে না।</p>
+
+  <h2>Step 3: Cover</h2>
+  <div class="box cover">Cover</div>
+  <p>Image box পুরো ঢেকে দেবে। কিছু crop হতে পারে।</p>
+
+  <h2>Step 3: Contain</h2>
+  <div class="box contain">Contain</div>
+  <p>Image box এর মধ্যে পুরো দেখাবে, ফাঁকা জায়গা থাকতে পারে।</p>
+
+  <h2>Step 4: Center</h2>
+  <div class="box center">Centered</div>
+  <p>Image সবসময় center এ থাকবে।</p>
+
+</body>
+</html>
