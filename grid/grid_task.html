@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Gallery Layout Tasks</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+    h1 {
+      text-align: center;
+      background: #333;
+      color: white;
+      padding: 10px;
+      margin-top: 40px;
+      border-radius: 8px;
+    }
+    .gallery {
+      display: grid;
+      gap: 10px;
+      max-width: 1000px;
+      margin: 20px auto;
+    }
+    .gallery img {
+      width: 100%;
+      display: block;
+      border-radius: 6px;
+    }
+    /* Layout variations */
+    .layout-1 {
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+    .layout-2 {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    .layout-3 {
+      grid-template-columns: 2fr 1fr 1fr;
+    }
+    .layout-4 {
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 200px;
+    }
+    .layout-4 img:nth-child(1) {
+      grid-column: span 2; /* First image big */
+    }
+    .layout-4 img:nth-child(4) {
+      grid-row: span 2; /* Fourth image tall */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Layout 1: Responsive auto-fill -->
+  <h1>Task 1: Responsive Auto-Fill Gallery</h1>
+  <div class="gallery layout-1">
+    <img src="https://picsum.photos/400/300?random=1">
+    <img src="https://picsum.photos/400/300?random=2">
+    <img src="https://picsum.photos/400/300?random=3">
+    <img src="https://picsum.photos/400/300?random=4">
+    <img src="https://picsum.photos/400/300?random=5">
+    <img src="https://picsum.photos/400/300?random=6">
+  </div>
+
+  <!-- Layout 2: Fixed 3 columns -->
+  <h1>Task 2: Fixed 3-Column Grid</h1>
+  <div class="gallery layout-2">
+    <img src="https://picsum.photos/400/300?random=7">
+    <img src="https://picsum.photos/400/300?random=8">
+    <img src="https://picsum.photos/400/300?random=9">
+    <img src="https://picsum.photos/400/300?random=10">
+    <img src="https://picsum.photos/400/300?random=11">
+    <img src="https://picsum.photos/400/300?random=12">
+  </div>
+
+  <!-- Layout 3: Asymmetric Grid (one wide column) -->
+  <h1>Task 3: Asymmetric Grid (One Wide Column)</h1>
+  <div class="gallery layout-3">
+    <img src="https://picsum.photos/400/300?random=13">
+    <img src="https://picsum.photos/400/300?random=14">
+    <img src="https://picsum.photos/400/300?random=15">
+    <img src="https://picsum.photos/400/300?random=16">
+    <img src="https://picsum.photos/400/300?random=17">
+    <img src="https://picsum.photos/400/300?random=18">
+  </div>
+
+  <!-- Layout 4: Mixed-Size Grid -->
+  <h1>Task 4: Mixed-Size Grid (Grid-Span)</h1>
+  <div class="gallery layout-4">
+    <img src="https://picsum.photos/400/300?random=19">
+    <img src="https://picsum.photos/400/300?random=20">
+    <img src="https://picsum.photos/400/300?random=21">
+    <img src="https://picsum.photos/400/300?random=22">
+    <img src="https://picsum.photos/400/300?random=23">
+    <img src="https://picsum.photos/400/300?random=24">
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complex CSS Grid Examples</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    h1, h2 {
+      margin-top: 30px;
+      color: #222;
+    }
+    .demo-wrap {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,.1);
+      margin-bottom: 40px;
+    }
+
+    /* ------------------ Example 1: Dashboard Layout ------------------ */
+    .dashboard {
+      display: grid;
+      grid-template-columns: 250px 1fr 250px;
+      grid-template-rows: auto 1fr;
+      grid-template-areas:
+        "nav header header"
+        "nav main aside";
+      gap: 10px;
+      min-height: 300px;
+    }
+    .dash-nav {
+         grid-area: nav;
+         background: #cce5ff; 
+         padding: 10px;
+}
+    .dash-header { grid-area: header; background: #007bff; color: white; padding: 10px; }
+    .dash-main { grid-area: main; background: #fff; padding: 10px; border: 1px solid #ddd; }
+    .dash-aside { grid-area: aside; background: #e9ecef; padding: 10px; }
+
+    /* Responsive for small screens */
+    @media (max-width: 800px) {
+      .dashboard {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "header"
+          "nav"
+          "main"
+          "aside";
+      }
+    }
+
+    /* ------------------ Example 2: Magazine Layout ------------------ */
+    .magazine {
+      display: grid; 
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-areas:
+        "hero hero side"
+        "article1 article2 side"
+        "article3 article2 side";
+      gap: 10px;
+    }
+    .mag-hero { grid-area: hero; background: url('https://picsum.photos/900/300') center/cover; color: white; display: flex; align-items: end; padding: 15px; border-radius: 8px; }
+    .mag-article1 { grid-area: article1; background: white; padding: 10px; border-radius: 8px; }
+    .mag-article2 { grid-area: article2; background: white; padding: 10px; border-radius: 8px; }
+    .mag-article3 { grid-area: article3; background: white; padding: 10px; border-radius: 8px; }
+    .mag-side { grid-area: side; background: #f1f3f5; padding: 10px; border-radius: 8px; }
+
+    /* Responsive for small screens */
+    @media (max-width: 800px) {
+      .magazine {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "hero"
+          "article1"
+          "article2"
+          "article3"
+          "side";
+      }
+    }
+
+    /* ------------------ Example 3: Responsive Gallery ------------------ */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 10px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    /* ------------------ Example 4: Product Grid ------------------ */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+    .product {
+      background: white;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .product img {
+      width: 100%;
+      border-radius: 6px;
+    }
+    .product-footer {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+    }
+    .price { font-weight: bold; color: #28a745; }
+    .btn {
+      background: #007bff;
+      color: white;
+      padding: 6px 10px;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    /* Responsive */
+    @media (max-width: 800px) {
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 500px) {
+      .products {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Complex CSS Grid Examples</h1>
+
+  <!-- Example 1: Dashboard Layout -->
+  <h2>1. Dashboard Layout</h2>
+  <div class="demo-wrap dashboard">
+    <div class="dash-nav">Navigation</div>
+    <div class="dash-header">Header</div>
+    <div class="dash-main">Main Content</div>
+    <div class="dash-aside">Sidebar</div>
+  </div>
+
+  <!-- Example 2: Magazine Layout -->
+  <h2>2. Magazine Layout</h2>
+  <div class="demo-wrap magazine">
+    <div class="mag-hero">Big Hero Section</div>
+    <div class="mag-article1">Article 1</div>
+    <div class="mag-article2">Article 2</div>
+    <div class="mag-article3">Article 3</div>
+    <div class="mag-side">Sidebar</div>
+  </div>
+
+  <!-- Example 3: Responsive Gallery -->
+  <h2>3. Responsive Gallery</h2>
+  <div class="demo-wrap gallery">
+    <img src="https://picsum.photos/400/300?random=1">
+    <img src="https://picsum.photos/400/300?random=2">
+    <img src="https://picsum.photos/400/300?random=3">
+    <img src="https://picsum.photos/400/300?random=4">
+    <img src="https://picsum.photos/400/300?random=5">
+    <img src="https://picsum.photos/400/300?random=6">
+  </div>
+
+  <!-- Example 4: Product Grid -->
+  <h2>4. Product Grid</h2>
+  <div class="demo-wrap products">
+    <div class="product">
+      <img src="https://picsum.photos/300/200?random=11">
+      <p>Product A</p>
+      <div class="product-footer">
+        <span class="price">$29</span>
+        <a href="#" class="btn">Buy</a>
+      </div>
+    </div>
+    <div class="product">
+      <img src="https://picsum.photos/300/200?random=12">
+      <p>Product B</p>
+      <div class="product-footer">
+        <span class="price">$49</span>
+        <a href="#" class="btn">Buy</a>
+      </div>
+    </div>
+    <div class="product">
+      <img src="https://picsum.photos/300/200?random=13">
+      <p>Product C</p>
+      <div class="product-footer">
+        <span class="price">$19</span>
+        <a href="#" class="btn">Buy</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
